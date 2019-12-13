@@ -1,0 +1,241 @@
+==67313== Memcheck, a memory error detector
+==67313== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==67313== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==67313== Command: ./testDijkstra.sh
+==67313== Parent PID: 118197
+==67313== 
+--67313-- 
+--67313-- Valgrind options:
+--67313--    --leak-check=full
+--67313--    --show-leak-kinds=all
+--67313--    --track-origins=yes
+--67313--    --verbose
+--67313--    --log-file=valgrind-out.txt
+--67313-- Contents of /proc/version:
+--67313--   Linux version 4.9.0-0.bpo.11-amd64 (debian-kernel@lists.debian.org) (gcc version 4.9.2 (Debian 4.9.2-10+deb8u2) ) #1 SMP Debian 4.9.189-3+deb9u2~deb8u1 (2019-11-12)
+--67313-- 
+--67313-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--67313-- Page sizes: currently 4096, max supported 4096
+--67313-- Valgrind library directory: /usr/lib/valgrind
+--67313-- Reading syms from /bin/bash
+--67313--    object doesn't have a symbol table
+--67313-- Reading syms from /lib/x86_64-linux-gnu/ld-2.28.so
+--67313--   Considering /usr/lib/debug/.build-id/f6/8476632fe338d209f9536ad0ebe7cfde5b5f28.debug ..
+--67313--   .. build-id is valid
+--67313-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--67313--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--67313--   .. CRC mismatch (computed 7680f3df wanted 92e0f93c)
+--67313--   Considering /usr/lib/debug/usr/lib/valgrind/memcheck-amd64-linux ..
+--67313--   .. CRC is valid
+--67313--    object doesn't have a dynamic symbol table
+--67313-- Scheduler: using generic scheduler lock implementation.
+--67313-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==67313== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67313-by-z5157686-on-???
+==67313== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67313-by-z5157686-on-???
+==67313== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67313-by-z5157686-on-???
+==67313== 
+==67313== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67313== don't want to do, unless you know exactly what you're doing,
+==67313== or are doing some strange experiment):
+==67313==   /usr/lib/valgrind/../../bin/vgdb --pid=67313 ...command...
+==67313== 
+==67313== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67313==   /path/to/gdb ./testDijkstra.sh
+==67313== and then give GDB the following command
+==67313==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67313
+==67313== --pid is optional if only one valgrind process is running
+==67313== 
+--67313-- REDIR: 0x401e370 (ld-linux-x86-64.so.2:strlen) redirected to 0x58061781 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--67313-- REDIR: 0x401e150 (ld-linux-x86-64.so.2:index) redirected to 0x5806179b (vgPlain_amd64_linux_REDIR_FOR_index)
+--67313-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--67313--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--67313--   .. CRC mismatch (computed 66a2a561 wanted 3789c7eb)
+--67313--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--67313--   .. CRC is valid
+--67313-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--67313--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--67313--   .. CRC mismatch (computed 8487a070 wanted 8af30a91)
+--67313--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--67313--   .. CRC is valid
+==67313== WARNING: new redirection conflicts with existing -- ignoring it
+--67313--     old: 0x0401e370 (strlen              ) R-> (0000.0) 0x58061781 vgPlain_amd64_linux_REDIR_FOR_strlen
+--67313--     new: 0x0401e370 (strlen              ) R-> (2007.0) 0x04838a60 strlen
+--67313-- REDIR: 0x401ab90 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4839b90 (strcmp)
+--67313-- REDIR: 0x401e8b0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x483d1a0 (mempcpy)
+--67313-- Reading syms from /lib/x86_64-linux-gnu/libcloneforkinterceptor.so
+--67313--    object doesn't have a symbol table
+--67313-- Reading syms from /lib/x86_64-linux-gnu/libncurses.so.5.9
+--67313--    object doesn't have a symbol table
+--67313-- Reading syms from /lib/x86_64-linux-gnu/libtinfo.so.5.9
+--67313--    object doesn't have a symbol table
+--67313-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.28.so
+--67313--   Considering /usr/lib/debug/.build-id/5f/5bc3aba9c2600e38002c8471fb24e6005fd7c8.debug ..
+--67313--   .. build-id is valid
+--67313-- Reading syms from /lib/x86_64-linux-gnu/libc-2.28.so
+--67313--   Considering /usr/lib/debug/.build-id/dd/2b8c469f69d0866039fcc75889451baca4e0f1.debug ..
+--67313--   .. build-id is valid
+--67313-- REDIR: 0x495c190 (libc.so.6:memmove) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b380 (libc.so.6:strncpy) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c470 (libc.so.6:strcasecmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495ad90 (libc.so.6:strcat) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b3b0 (libc.so.6:rindex) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495daa0 (libc.so.6:rawmemchr) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x4975f00 (libc.so.6:wcscmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c300 (libc.so.6:mempcpy) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c130 (libc.so.6:bcmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b320 (libc.so.6:strncmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495ae00 (libc.so.6:strcmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c260 (libc.so.6:memset) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x4975ed0 (libc.so.6:wcschr) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b2c0 (libc.so.6:strnlen) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495ae90 (libc.so.6:strcspn) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c4c0 (libc.so.6:strncasecmp) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495ae60 (libc.so.6:strcpy) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c600 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b3e0 (libc.so.6:strpbrk) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495adc0 (libc.so.6:index) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b290 (libc.so.6:strlen) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x49624b0 (libc.so.6:memrchr) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c510 (libc.so.6:strcasecmp_l) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c100 (libc.so.6:memchr) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x4975fe0 (libc.so.6:wcslen) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b680 (libc.so.6:strspn) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c440 (libc.so.6:stpncpy) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c410 (libc.so.6:stpcpy) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495dad0 (libc.so.6:strchrnul) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c560 (libc.so.6:strncasecmp_l) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495b2f0 (libc.so.6:strncat) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x49dac60 (libc.so.6:__memcpy_chk) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x495c040 (libc.so.6:strstr) redirected to 0x482b1c0 (_vgnU_ifunc_wrapper)
+--67313-- REDIR: 0x4a2f390 (libc.so.6:__strrchr_avx2) redirected to 0x48383e0 (rindex)
+--67313-- REDIR: 0x4a2aaa0 (libc.so.6:__strcmp_avx2) redirected to 0x4839a50 (strcmp)
+--67313-- REDIR: 0x4a2f560 (libc.so.6:__strlen_avx2) redirected to 0x48389a0 (strlen)
+--67313-- REDIR: 0x4a2aee0 (libc.so.6:__strncmp_avx2) redirected to 0x48390a0 (strncmp)
+--67313-- REDIR: 0x4a2ef70 (libc.so.6:__strchr_avx2) redirected to 0x4838600 (index)
+--67313-- REDIR: 0x4a2b3f0 (libc.so.6:__memchr_avx2) redirected to 0x4839c30 (memchr)
+--67313-- REDIR: 0x4a2f1a0 (libc.so.6:__strchrnul_avx2) redirected to 0x483ccd0 (strchrnul)
+--67313-- REDIR: 0x4b8000 (NONE:malloc) redirected to 0x4835750 (malloc)
+--67313-- REDIR: 0x4a2fa80 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x483cde0 (mempcpy)
+--67313-- REDIR: 0x4a2faa0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x483c390 (memmove)
+--67313-- REDIR: 0x4b8020 (NONE:free) redirected to 0x4836980 (free)
+--67313-- REDIR: 0x4971940 (libc.so.6:__stpcpy_sse2_unaligned) redirected to 0x483beb0 (__stpcpy_sse2_unaligned)
+--67313-- REDIR: 0x4a2ff20 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x483c280 (memset)
+--67313-- REDIR: 0x4970330 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x4838a80 (strcpy)
+--67313-- REDIR: 0x4a2f6f0 (libc.so.6:__strnlen_avx2) redirected to 0x4838940 (strnlen)
+--67313-- REDIR: 0x4b8060 (NONE:calloc) redirected to 0x4837720 (calloc)
+--67313-- REDIR: 0x49db030 (libc.so.6:__strcpy_chk) redirected to 0x483cd40 (__strcpy_chk)
+==67374== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67374-by-z5157686-on-???
+==67374== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67374-by-z5157686-on-???
+==67374== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67374-by-z5157686-on-???
+==67374== 
+==67374== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67374== don't want to do, unless you know exactly what you're doing,
+==67374== or are doing some strange experiment):
+==67374==   /usr/lib/valgrind/../../bin/vgdb --pid=67374 ...command...
+==67374== 
+==67374== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67374==   /path/to/gdb ./testDijkstra.sh
+==67374== and then give GDB the following command
+==67374==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67374
+==67374== --pid is optional if only one valgrind process is running
+==67374== 
+==67376== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67376-by-z5157686-on-???
+==67376== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67376-by-z5157686-on-???
+==67376== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67376-by-z5157686-on-???
+==67376== 
+==67376== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67376== don't want to do, unless you know exactly what you're doing,
+==67376== or are doing some strange experiment):
+==67376==   /usr/lib/valgrind/../../bin/vgdb --pid=67376 ...command...
+==67376== 
+==67376== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67376==   /path/to/gdb ./testDijkstra.sh
+==67376== and then give GDB the following command
+==67376==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67376
+==67376== --pid is optional if only one valgrind process is running
+==67376== 
+--67313-- REDIR: 0x4970960 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x4838f90 (__strncpy_sse2_unaligned)
+==67401== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67401-by-z5157686-on-???
+==67401== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67401-by-z5157686-on-???
+==67401== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67401-by-z5157686-on-???
+==67401== 
+==67401== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67401== don't want to do, unless you know exactly what you're doing,
+==67401== or are doing some strange experiment):
+==67401==   /usr/lib/valgrind/../../bin/vgdb --pid=67401 ...command...
+==67401== 
+==67401== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67401==   /path/to/gdb ./testDijkstra.sh
+==67401== and then give GDB the following command
+==67401==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67401
+==67401== --pid is optional if only one valgrind process is running
+==67401== 
+==67414== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67414-by-z5157686-on-???
+==67414== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67414-by-z5157686-on-???
+==67414== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67414-by-z5157686-on-???
+==67414== 
+==67414== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67414== don't want to do, unless you know exactly what you're doing,
+==67414== or are doing some strange experiment):
+==67414==   /usr/lib/valgrind/../../bin/vgdb --pid=67414 ...command...
+==67414== 
+==67414== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67414==   /path/to/gdb ./testDijkstra.sh
+==67414== and then give GDB the following command
+==67414==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67414
+==67414== --pid is optional if only one valgrind process is running
+==67414== 
+==67417== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67417-by-z5157686-on-???
+==67417== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67417-by-z5157686-on-???
+==67417== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67417-by-z5157686-on-???
+==67417== 
+==67417== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67417== don't want to do, unless you know exactly what you're doing,
+==67417== or are doing some strange experiment):
+==67417==   /usr/lib/valgrind/../../bin/vgdb --pid=67417 ...command...
+==67417== 
+==67417== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67417==   /path/to/gdb ./testDijkstra.sh
+==67417== and then give GDB the following command
+==67417==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67417
+==67417== --pid is optional if only one valgrind process is running
+==67417== 
+==67420== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67420-by-z5157686-on-???
+==67420== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67420-by-z5157686-on-???
+==67420== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67420-by-z5157686-on-???
+==67420== 
+==67420== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67420== don't want to do, unless you know exactly what you're doing,
+==67420== or are doing some strange experiment):
+==67420==   /usr/lib/valgrind/../../bin/vgdb --pid=67420 ...command...
+==67420== 
+==67420== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67420==   /path/to/gdb ./testDijkstra.sh
+==67420== and then give GDB the following command
+==67420==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67420
+==67420== --pid is optional if only one valgrind process is running
+==67420== 
+==67423== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-67423-by-z5157686-on-???
+==67423== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-67423-by-z5157686-on-???
+==67423== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-67423-by-z5157686-on-???
+==67423== 
+==67423== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==67423== don't want to do, unless you know exactly what you're doing,
+==67423== or are doing some strange experiment):
+==67423==   /usr/lib/valgrind/../../bin/vgdb --pid=67423 ...command...
+==67423== 
+==67423== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==67423==   /path/to/gdb ./testDijkstra.sh
+==67423== and then give GDB the following command
+==67423==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=67423
+==67423== --pid is optional if only one valgrind process is running
+==67423== 
+==67313== 
+==67313== HEAP SUMMARY:
+==67313==     in use at exit: 0 bytes in 0 blocks
+==67313==   total heap usage: 46 allocs, 46 frees, 7,983 bytes allocated
+==67313== 
+==67313== All heap blocks were freed -- no leaks are possible
+==67313== 
+==67313== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==67313== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
