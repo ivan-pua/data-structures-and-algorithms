@@ -2,8 +2,7 @@
 
 This repo consists of my work in COMP2521 - Data Structures and Algorithms, some of the notable ones include:
 * Breadth-first and Depth-first search
-* Reverse a double linked list
-* Identifying a perfectly balanced tree
+* Djikstra's Algorithm
 
 The input tests and header files are included in this repo.
 
